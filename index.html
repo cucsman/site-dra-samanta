@@ -1,0 +1,486 @@
+<!doctype html>
+<!-- ============================================================
+  TEMPLATE-ESTETICA · RDM
+  Paleta: troque data-theme para "rose" | "salvia" | "areia"
+  Dados do cliente: bloco CONFIG no fim do arquivo + textos marcados com [TODO]
+  Estrutura fixa de 8 seções — não remover seções, só adaptar conteúdo.
+============================================================ -->
+<html lang="pt-BR" data-theme="areia">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO básico -->
+  <title>Dra. Samanta Magalhães · Estética e Massoterapia no Campeche, Florianópolis</title>
+  <meta name="description" content="Biomédica esteta (CRBM 012496), esteticista e massoterapeuta no Campeche, Florianópolis. Drenagem linfática, massagens, limpeza de pele e estética facial com avaliação individual. Agende pelo WhatsApp.">
+  <meta property="og:title" content="Dra. Samanta Magalhães · Estética e Massoterapia · Campeche, Florianópolis">
+  <meta property="og:description" content="Drenagem linfática, massagens e cuidados faciais com biomédica esteta. Agende sua avaliação pelo WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_3DjvtZXi51SOI1tV5xfZ09d74Q3/hf_20260916_215221_41cccd15-fcd8-475f-a8b2-744fb41197e2_min.webp">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 3c6 0 10 5.5 10 12.5V29H6V15.5C6 8.5 10 3 16 3z' fill='%23A67C52'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340..600;1,9..144,340..600&family=Albert+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============ TOKENS · 3 paletas ============ */
+    :root, [data-theme="areia"]{
+      --bg:#F6EFEA; --surface:#FDFAF8; --soft:#EAD9D3;
+      --ink:#43322B; --muted:#7C685F;
+      --accent:#A25A66; --accent-deep:#7E3E4B;
+      --gold:#A98D5F; --line:#DCC9C2;
+      --on-accent:#FFF6F2;
+    }
+    [data-theme="salvia"]{
+      --bg:#F2F4EE; --surface:#FBFCF9; --soft:#DCE3D6;
+      --ink:#2E3A31; --muted:#65735F;
+      --accent:#5F7A64; --accent-deep:#425A48;
+      --gold:#A08F5B; --line:#CBD5C4;
+      --on-accent:#F4F8F2;
+    }
+    [data-theme="areia"]{
+      --bg:#F5EEE3; --surface:#FCF8F1; --soft:#E9DCC8;
+      --ink:#3F3226; --muted:#7C6B56;
+      --accent:#A67C52; --accent-deep:#7C5936;
+      --gold:#B29459; --line:#DECFB8;
+      --on-accent:#FBF6EC;
+    }
+
+    /* ============ BASE ============ */
+    *{box-sizing:border-box; margin:0}
+    html{scroll-behavior:smooth}
+    body{
+      background:var(--bg); color:var(--ink);
+      font:400 1.0625rem/1.65 "Albert Sans", "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    img{max-width:100%; display:block}
+    a{color:var(--accent); text-decoration-thickness:1px; text-underline-offset:3px}
+    a:focus-visible, button:focus-visible, summary:focus-visible{
+      outline:2px solid var(--accent); outline-offset:3px; border-radius:2px;
+    }
+    .wrap{max-width:1120px; margin-inline:auto; padding-inline:clamp(20px,5vw,48px)}
+    section{padding-block:clamp(56px,9vw,104px)}
+
+    h1,h2,h3{font-family:"Fraunces", Georgia, serif; font-weight:420; line-height:1.12; letter-spacing:-.01em}
+    h2{font-size:clamp(1.7rem,3.6vw,2.5rem); max-width:18ch; margin-bottom:.5em}
+    .lede{color:var(--muted); max-width:52ch}
+
+    /* Botões */
+    .btn{
+      display:inline-flex; align-items:center; gap:.55em;
+      background:var(--accent); color:var(--on-accent);
+      font-weight:600; font-size:1rem; text-decoration:none;
+      padding:.9em 1.5em; border-radius:999px;
+      transition:background .2s ease;
+    }
+    .btn:hover{background:var(--accent-deep)}
+    .btn svg{width:1.15em; height:1.15em; flex:none}
+    .btn-quiet{
+      display:inline-block; color:var(--ink);
+      font-weight:500; text-decoration-color:var(--gold);
+    }
+
+    /* Moldura em arco — motivo visual do template */
+    .arch{
+      border-radius:999px 999px 12px 12px;
+      background:
+        linear-gradient(160deg, var(--soft) 0%, var(--surface) 60%, var(--soft) 100%);
+      border:1px solid var(--line);
+      padding:1em;
+      color:var(--muted); font-size:.85rem; text-align:center;
+    }
+    .arch img{
+      display:block; width:100%; aspect-ratio:4/5;
+      object-fit:cover; border-radius:999px 999px 8px 8px;
+    }
+
+    /* ============ 0 · HEADER ============ */
+    header{
+      position:sticky; top:0; z-index:50;
+      background:color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{display:flex; align-items:center; gap:1.5em; padding-block:14px}
+    .logo{font-family:"Fraunces", Georgia, serif; font-size:1.35rem; color:var(--ink); text-decoration:none}
+    .logo em{color:var(--accent); font-style:italic}
+    .nav nav{margin-left:auto; display:flex; gap:1.4em}
+    .nav nav a{color:var(--muted); text-decoration:none; font-size:.95rem}
+    .nav nav a:hover{color:var(--ink)}
+    .nav .btn{padding:.6em 1.1em; font-size:.92rem}
+    @media (max-width:760px){ .nav nav{display:none} }
+
+    /* ============ 1 · HERO (com vídeo de fundo) ============ */
+    .hero{position:relative; overflow:hidden}
+    .hero-bg{position:absolute; inset:0; z-index:0}
+    .bgv{
+      position:absolute; inset:0; width:100%; height:100%;
+      object-fit:cover; opacity:0; transition:opacity 1.2s ease;
+    }
+    .bgv.on{opacity:1}
+    .bg-fallback{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+    @media (max-width:900px){ .hero-bg .bgv{display:none} }
+    .hero-veil{
+      position:absolute; inset:0;
+      background:linear-gradient(90deg,
+        color-mix(in srgb, var(--bg) 88%, transparent) 0%,
+        color-mix(in srgb, var(--bg) 76%, transparent) 55%,
+        color-mix(in srgb, var(--bg) 60%, transparent) 100%);
+    }
+    .hero .wrap{position:relative; z-index:1}
+    @media (prefers-reduced-motion:reduce){ .hero-bg video{display:none} }
+
+    .hero .wrap{
+      display:grid; grid-template-columns:1.15fr .85fr;
+      gap:clamp(28px,5vw,72px); align-items:center;
+    }
+    .hero .reveal{order:1} .hero .arch{order:2}
+    .hero h1{font-size:clamp(2.2rem,5.2vw,3.7rem); font-style:italic; max-width:15ch}
+    .hero p.lede{margin-block:1.1em 0}
+    .cta-row{
+      display:flex; flex-wrap:wrap; gap:1em 2.2em;
+      align-items:center; margin-top:1.8em;
+    }
+    .hero .local{
+      font-size:.95rem; color:var(--muted); margin-top:2em;
+      padding-top:1.1em; border-top:1px solid var(--line); max-width:40ch;
+    }
+    @media (prefers-reduced-motion:no-preference){
+      .hero .reveal{animation:rise .7s ease both}
+      .hero .arch{animation:rise .7s .15s ease both}
+      @keyframes rise{from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:none}}
+    }
+    @media (max-width:760px){
+      .hero .wrap{grid-template-columns:1fr}
+      .hero .arch{max-width:300px; margin-inline:auto; order:0}
+    }
+
+    /* ============ 2 · PROVA SOCIAL ============ */
+    .proof{padding-block:0}
+    .proof .wrap{
+      display:flex; flex-wrap:wrap; gap:.5em 2.5em; align-items:baseline;
+      border-block:1px solid var(--line); padding-block:1.1em;
+      font-family:"Fraunces", Georgia, serif; font-size:1.05rem;
+    }
+    .proof b{font-weight:600; color:var(--accent)}
+
+    /* ============ 3 · PROCEDIMENTOS ============ */
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(20px,3vw,36px)}
+    @media (max-width:900px){ .grid{grid-template-columns:1fr 1fr} }
+    @media (max-width:560px){ .grid{grid-template-columns:1fr} }
+    .proc .arch{margin-bottom:1em}
+    .proc .arch img{aspect-ratio:5/4}
+    .proc h3{font-size:1.25rem; margin-bottom:.25em}
+    .proc p{color:var(--muted); font-size:.98rem; margin-bottom:.5em}
+    .proc a{font-size:.95rem; font-weight:500}
+
+    /* ============ 4 · SOBRE ============ */
+    .sobre .wrap{display:grid; grid-template-columns:.7fr 1.3fr; gap:clamp(28px,5vw,72px); align-items:center}
+    .sobre .cred{margin-top:1.2em; color:var(--muted); font-size:.95rem}
+    .sobre .cred b{color:var(--ink); font-weight:600}
+    @media (max-width:760px){ .sobre .wrap{grid-template-columns:1fr} .sobre .arch{max-width:280px; margin-inline:auto} }
+
+    /* ============ 5 · DIFERENCIAIS ============ */
+    .porque-grid{display:grid; grid-template-columns:.65fr 1.35fr; gap:clamp(28px,5vw,72px); align-items:center}
+    .porque .arch{width:min(300px,75vw)}
+    @media (max-width:760px){ .porque-grid{grid-template-columns:1fr} .porque .arch{margin-inline:auto} }
+    .difs{display:grid; grid-template-columns:1fr 1fr; gap:1.6em clamp(24px,4vw,64px); max-width:900px}
+    @media (max-width:640px){ .difs{grid-template-columns:1fr} }
+    .difs div{padding-left:1.1em; border-left:2px solid var(--gold)}
+    .difs h3{font-size:1.1rem; margin-bottom:.2em}
+    .difs p{color:var(--muted); font-size:.97rem}
+
+    /* ============ 7 · LOCALIZAÇÃO ============ */
+    .local-grid{display:grid; grid-template-columns:1fr 1fr; gap:clamp(24px,4vw,56px); align-items:start}
+    @media (max-width:760px){ .local-grid{grid-template-columns:1fr} }
+    .mapa{border:1px solid var(--line); border-radius:12px; overflow:hidden; aspect-ratio:4/3; background:var(--soft)}
+    .mapa iframe{width:100%; height:100%; border:0}
+    .ig-line{text-align:center; margin-top:1em; font-size:.97rem}
+    .horarios{width:100%; border-collapse:collapse; margin-top:1em; font-size:.97rem}
+    .horarios td{padding:.45em 0; border-bottom:1px solid var(--line)}
+    @media (max-width:760px){ .local-grid p:has(> .btn){text-align:center} }
+    .horarios td:last-child{text-align:right; color:var(--muted)}
+
+    /* ============ 8 · FAQ ============ */
+    #faq .wrap{max-width:768px}
+    .faq{max-width:720px}
+    .faq details{border-bottom:1px solid var(--line)}
+    .faq summary{
+      cursor:pointer; padding-block:1em; font-weight:500; font-size:1.02rem;
+      list-style:none; display:flex; justify-content:space-between; gap:1em;
+    }
+    .faq summary::after{content:"+"; color:var(--gold); font-family:"Fraunces",serif; font-size:1.3em; line-height:1}
+    .faq details[open] summary::after{content:"–"}
+    .faq details p{padding-bottom:1.1em; color:var(--muted); max-width:58ch}
+
+    /* ============ 9 · CTA FINAL ============ */
+    .cta-final{background:var(--surface); border-block:1px solid var(--line); text-align:center}
+    .cta-final h2{margin-inline:auto}
+    .cta-final p{margin:0 auto 1.6em; max-width:44ch; color:var(--muted)}
+
+    footer{padding-block:2.2em; font-size:.9rem; color:var(--muted)}
+    footer .wrap{text-align:center}
+
+    /* Botão flutuante de WhatsApp */
+    .wa-float{
+      position:fixed; right:18px; bottom:18px; z-index:60;
+      width:56px; height:56px; border-radius:50%;
+      background:#25D366; color:#fff; display:grid; place-items:center;
+      box-shadow:0 4px 14px rgba(0,0,0,.25);
+    }
+    .wa-float svg{width:30px; height:30px}
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">Dra. Samanta <em>Magalhães</em></a>
+    <nav aria-label="Seções">
+      <a href="#procedimentos">Procedimentos</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#local">Onde estamos</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+    <a class="btn" data-wa data-msg="Olá, Dra. Samanta! Vim pelo site e gostaria de agendar uma avaliação.">Agendar avaliação</a>
+  </div>
+</header>
+
+<!-- ===== 1 · HERO ===== -->
+<section class="hero">
+  <!-- Vídeo de fundo: 2 clipes alternando com crossfade (peeling / microagulhamento). Só as mãos da profissional aparecem. -->
+  <div class="hero-bg" aria-hidden="true">
+    <img class="bg-fallback" src="https://d8j0ntlcm91z4.cloudfront.net/user_3DjvtZXi51SOI1tV5xfZ09d74Q3/hf_20260914_175552_f6bb33bc-d5ec-438d-a48e-63cec593a9d4_min.webp" alt="">
+    <video id="bgv1" class="bgv on" src="https://d8j0ntlcm91z4.cloudfront.net/user_3DjvtZXi51SOI1tV5xfZ09d74Q3/hf_20260914_182241_474f5fee-8dfb-418a-b5bc-420188faf9f9.mp4" autoplay muted loop playsinline preload="auto" poster="https://d8j0ntlcm91z4.cloudfront.net/user_3DjvtZXi51SOI1tV5xfZ09d74Q3/hf_20260914_175552_f6bb33bc-d5ec-438d-a48e-63cec593a9d4_min.webp"></video>
+    <video id="bgv2" class="bgv" src="https://d8j0ntlcm91z4.cloudfront.net/user_3DjvtZXi51SOI1tV5xfZ09d74Q3/hf_20260914_182241_fed3b759-0069-4895-88a2-18c3f8ed6670.mp4" muted loop playsinline preload="auto"></video>
+    <div class="hero-veil"></div>
+  </div>
+  <div class="wrap">
+    <div class="arch"><img src="img/hero-dra-samanta.webp" onerror="this.onerror=null;this.src='https://d8j0ntlcm91z4.cloudfront.net/user_3DjvtZXi51SOI1tV5xfZ09d74Q3/hf_20260916_215221_41cccd15-fcd8-475f-a8b2-744fb41197e2_min.webp'" alt="Dra. Samanta Magalhães, biomédica esteta e massoterapeuta no Campeche"></div>
+    <div class="reveal">
+      <h1>Bem-estar que você sente na pele — e no corpo inteiro.</h1>
+      <p class="lede">Drenagem linfática, massagens terapêuticas e cuidados faciais com biomédica esteta, no Campeche. Cada atendimento começa com uma avaliação individual.</p>
+      <div class="cta-row">
+      <a class="btn" data-wa data-msg="Olá, Dra. Samanta! Vim pelo site e gostaria de agendar uma avaliação.">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.3Z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+      <a class="btn-quiet" href="#procedimentos">Ver procedimentos</a>
+      </div>
+      <p class="local">Campeche · Florianópolis — atendimento com hora marcada, de segunda a sexta (exceto terça).</p>
+    </div>
+      </div>
+</section>
+
+<!-- ===== 2 · PROVA SOCIAL ===== -->
+<section class="proof" aria-label="Números do estúdio">
+  <div class="wrap">
+    <span><b>5,0 ★</b> em 42 avaliações no Google</span>
+    <span><b>Biomédica esteta</b> · CRBM 012496</span>
+    <span><b>Especialista</b> em drenagem linfática</span>
+    <!-- [CONFIRMAR] anos de experiência / nº de clientes — incluir quando a Dra. informar -->
+  </div>
+</section>
+
+<!-- ===== 3 · PROCEDIMENTOS ===== -->
+<section id="procedimentos">
+  <div class="wrap">
+    <h2>Procedimentos</h2>
+    <p class="lede" style="margin-bottom:2.2em">Corporal, facial e massoterapia — sempre precedidos de avaliação individual.</p>
+    <div class="grid">
+      <!-- [CONFIRMAR] lista final de procedimentos com a Dra. · [FOTO REAL] trocar as imagens IA por fotos reais dos procedimentos (existem no Instagram dela) -->
+      <article class="proc">
+        <div class="arch"><img loading="lazy" src="img/proc-limpeza-areia.webp" onerror="this.onerror=null;this.src='https://d8j0ntlcm91z4.cloudfront.net/user_3DjvtZXi51SOI1tV5xfZ09d74Q3/hf_20260914_175552_c749e73c-5577-4ed3-b69d-29ed19e8e827_min.webp'" alt="Limpeza de pele profunda"></div>
+        <h3>Limpeza de pele profunda</h3>
+        <p>Remove impurezas e cravos, renova e ilumina — a mais elogiada nas avaliações.</p>
+        <a data-wa data-msg="Olá, Dra. Samanta! Vim pelo site e quero agendar uma limpeza de pele.">Agendar minha limpeza de pele</a>
+      </article>
+      <article class="proc">
+        <div class="arch"><img loading="lazy" src="img/proc-peeling-areia.webp" onerror="this.onerror=null;this.src='https://d8j0ntlcm91z4.cloudfront.net/user_3DjvtZXi51SOI1tV5xfZ09d74Q3/hf_20260914_175552_f6bb33bc-d5ec-438d-a48e-63cec593a9d4_min.webp'" alt="Cuidados faciais com biomédica esteta"></div>
+        <h3>Estética facial avançada</h3> <!-- [CONFIRMAR] peeling / skinbooster / bioestimulador / toxina — nomear conforme a Dra. realiza -->
+        <p>Protocolos de hidratação profunda, renovação e estímulo de colágeno, indicados na avaliação.</p>
+        <a data-wa data-msg="Olá, Dra. Samanta! Vim pelo site e quero saber mais sobre os cuidados faciais.">Saber qual é indicado para mim</a>
+      </article>
+      <article class="proc">
+        <div class="arch"><img loading="lazy" src="img/proc-microagulhamento-areia.webp" onerror="this.onerror=null;this.src='https://d8j0ntlcm91z4.cloudfront.net/user_3DjvtZXi51SOI1tV5xfZ09d74Q3/hf_20260914_175553_aadae897-17b0-455a-996c-33ad50e5e755_min.webp'" alt="Tratamento corporal com aparelho"></div>
+        <h3>Estética corporal com aparelho</h3> <!-- [CONFIRMAR] radiofrequência / ultrassom / outros -->
+        <p>Tratamento de flacidez, gordura localizada e celulite, em protocolo progressivo.</p>
+        <a data-wa data-msg="Olá, Dra. Samanta! Vim pelo site e quero uma avaliação para estética corporal.">Agendar minha avaliação</a>
+      </article>
+      <article class="proc">
+        <div class="arch"><img loading="lazy" src="img/proc-drenagem-areia.webp" onerror="this.onerror=null;this.src='https://d8j0ntlcm91z4.cloudfront.net/user_3DjvtZXi51SOI1tV5xfZ09d74Q3/hf_20260914_175551_cb9fa0f6-252b-4881-bd8f-419713ff2c43_min.webp'" alt="Sessão de drenagem linfática"></div>
+        <h3>Drenagem linfática</h3>
+        <p>Menos inchaço e retenção, circulação ativa e pernas leves — a especialidade da casa.</p>
+        <a data-wa data-msg="Olá, Dra. Samanta! Vim pelo site e quero montar um pacote de drenagem linfática.">Montar meu pacote de sessões</a>
+      </article>
+      <article class="proc">
+        <div class="arch"><img loading="lazy" src="img/proc-modeladora-areia.webp" onerror="this.onerror=null;this.src='https://d8j0ntlcm91z4.cloudfront.net/user_3DjvtZXi51SOI1tV5xfZ09d74Q3/hf_20260914_175552_3f6dfdbb-7892-4c42-a6c7-9ac825555b1d_min.webp'" alt="Massagem relaxante"></div>
+        <h3>Massagem relaxante</h3>
+        <p>Alívio de tensões, dores nas costas e ombros travados — equilíbrio de corpo e mente.</p>
+        <a data-wa data-msg="Olá, Dra. Samanta! Vim pelo site e quero agendar uma massagem relaxante.">Agendar uma sessão</a>
+      </article>
+      <article class="proc">
+        <div class="arch"><img loading="lazy" src="img/proc-sobrancelhas-areia.webp" onerror="this.onerror=null;this.src='https://d8j0ntlcm91z4.cloudfront.net/user_3DjvtZXi51SOI1tV5xfZ09d74Q3/hf_20260914_175552_eafcf6a4-7322-426b-bb7d-cd2d99023a0c_min.webp'" alt="Ventosaterapia"></div> <!-- [FOTO REAL] ventosaterapia — usa imagem de sobrancelhas do set só como placeholder -->
+        <h3>Ventosaterapia</h3>
+        <p>Descompressão muscular, alívio de dores e melhora da circulação local.</p>
+        <a data-wa data-msg="Olá, Dra. Samanta! Vim pelo site e quero agendar uma sessão de ventosaterapia.">Agendar ventosaterapia</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4 · SOBRE / AUTORIDADE ===== -->
+<section id="sobre" class="sobre">
+  <div class="wrap">
+    <!-- [FOTO REAL] sempre foto real da profissional atendendo; manter gerada por IA só se a foto real for fraca -->
+    <div class="arch"><img src="img/sobre-dra-samanta.webp" onerror="this.onerror=null;this.src='https://d8j0ntlcm91z4.cloudfront.net/user_3DjvtZXi51SOI1tV5xfZ09d74Q3/hf_20260916_215221_d6eee468-8dc8-438a-86b6-654270c7270b_min.webp'" alt="Dra. Samanta Magalhães realizando drenagem linfática em atendimento"></div>
+    <div>
+      <h2>Quem cuida de você</h2>
+      <p class="lede">Sou a Samanta. Como esteticista e massoterapeuta, meu trabalho é uma paixão que se traduz em bem-estar: cuido da saúde da pele promovendo a beleza natural e a confiança, e minhas massagens trazem relaxamento profundo e alívio do estresse, para o equilíbrio do corpo e da mente. Ajudar você a se sentir revigorada e confiante na própria pele é o que me move.</p>
+      <p class="cred"><b>Formação:</b> Biomédica Esteta · Esteticista · Massoterapeuta · Especialista em Drenagem Linfática · <b>Registro:</b> CRBM 012496</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5 · DIFERENCIAIS ===== -->
+<section class="porque">
+  <div class="wrap porque-grid">
+    <!-- [FOTO REAL] espaço/consultório — sempre foto real do cliente; manter gerada por IA só se a foto real for fraca -->
+    <div class="arch"><img loading="lazy" src="img/espaco-areia.webp" onerror="this.onerror=null;this.src='https://d8j0ntlcm91z4.cloudfront.net/user_3DjvtZXi51SOI1tV5xfZ09d74Q3/hf_20260914_175552_5edaa3bb-3656-4021-bcfb-4d77f54b9fe4_min.webp'" alt="Sala de atendimento da Dra. Samanta no Campeche"></div>
+    <div>
+    <h2>Por que se cuidar com a Dra. Samanta</h2>
+    <div class="difs" style="margin-top:2em">
+      <div><h3>Biomédica esteta registrada</h3><p>Formação em saúde e registro CRBM 012496 — segurança nos cuidados faciais e corporais.</p></div>
+      <div><h3>Especialista em drenagem linfática</h3><p>Técnica manual precisa, com as "mãos leves" que as clientes mais elogiam.</p></div>
+      <div><h3>Avaliação antes de tudo</h3><p>Nenhum protocolo fechado sem entender seu corpo, histórico e rotina.</p></div>
+      <div><h3>Atendimento individual no Campeche</h3><p>Hora marcada, sem pressa, na SC-405 — fácil acesso para todo o sul da ilha.</p></div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6 · FAQ ===== -->
+<section id="faq">
+  <div class="wrap">
+    <h2>Dúvidas frequentes</h2>
+    <div class="faq" style="margin-top:1.4em"> <!-- [CONFIRMAR] duração das sessões e formas de pagamento -->
+      <details><summary>O procedimento dói?</summary><p>Não. Drenagem e massagens são confortáveis, com pressão ajustada ao seu corpo. Nos cuidados faciais, qualquer etapa mais sensível é avisada antes.</p></details>
+      <details><summary>Quantas sessões vou precisar?</summary><p>Depende do objetivo e da resposta do seu corpo — por isso tudo começa com avaliação. Drenagem e massagens costumam ser feitas em pacotes; você sai da primeira conversa sabendo o plano.</p></details>
+      <details><summary>Quanto custa?</summary><p>Os valores variam conforme o procedimento e o pacote. Chame no WhatsApp, conte seu objetivo e a Dra. Samanta envia as opções — a avaliação define o investimento exato.</p></details>
+      <details><summary>Existe contraindicação?</summary><p>Alguns procedimentos têm restrições (gestação, condições de saúde específicas, pele com lesões ativas). Tudo é verificado na avaliação, antes de qualquer sessão.</p></details>
+      <details><summary>Quanto tempo dura cada sessão?</summary><p>Em geral entre 50 e 90 minutos, conforme o procedimento. Você recebe a duração exata ao agendar.</p></details>
+      <details><summary>Quais formas de pagamento?</summary><p>Pix e cartão. Pacotes podem ser combinados pelo WhatsApp antes da primeira sessão.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7 · CTA FINAL ===== -->
+<section class="cta-final">
+  <div class="wrap">
+    <h2>Sua avaliação começa com uma mensagem</h2>
+    <p>Conte o que você quer melhorar e a Dra. Samanta responde com o melhor caminho — sem compromisso.</p>
+    <a class="btn" data-wa data-msg="Olá, Dra. Samanta! Vim pelo site e gostaria de agendar uma avaliação.">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.3Z"/></svg>
+      Chamar no WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- ===== 8 · LOCALIZAÇÃO + MAPS (final da página) ===== -->
+<section id="local">
+  <div class="wrap local-grid">
+    <div>
+      <h2>Onde estamos</h2>
+      <p class="lede">SC-405, 5029 – sala 2 (Trevo do Erasmo) · Campeche, Florianópolis - SC, 88065-000<br>Fácil acesso pela SC-405, no sul da ilha.</p> <!-- [CONFIRMAR] estacionamento -->
+      <table class="horarios">
+        <tr><td>Segunda</td><td>9h – 18h</td></tr>
+        <tr><td>Terça</td><td>fechado</td></tr>
+        <tr><td>Quarta a sexta</td><td>9h – 18h</td></tr>
+        <tr><td>Sábado e domingo</td><td>fechado</td></tr>
+      </table>
+      <p style="margin-top:1.4em"><a class="btn" data-wa data-msg="Olá, Dra. Samanta! Vim pelo site e quero agendar um horário.">Agendar um horário</a></p>
+    </div>
+    <div class="mapa">
+      
+      <iframe title="Mapa do estúdio" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Samanta%20Magalh%C3%A3es%20esteticista%20e%20Massoterapeuta%20Campeche%2C%20SC-405%2C%205029%2C%20Campeche%2C%20Florian%C3%B3polis&z=15&output=embed"></iframe>
+      <p class="ig-line"><a data-ig href="#" target="_blank" rel="noopener">Siga @dra.samantamagalhaes no Instagram</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="ano"></span> Dra. Samanta Magalhães · Estética e Massoterapia · CRBM 012496 · Campeche, Florianópolis</span>
+  </div>
+</footer>
+
+<!-- Botão flutuante -->
+<a class="wa-float" data-wa data-msg="Olá, Dra. Samanta! Vim pelo site e gostaria de agendar uma avaliação." aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .7-.2 1.3Z"/></svg>
+</a>
+
+<!-- Dados estruturados p/ SEO local -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "name": "Samanta Magalhães esteticista e Massoterapeuta Campeche",
+  "description": "Biomédica esteta (CRBM 012496), esteticista e massoterapeuta. Drenagem linfática, massagens e estética facial no Campeche, Florianópolis.",
+  "url": "https://www.instagram.com/dra.samantamagalhaes/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "SC-405, 5029 - sala 2, Campeche",
+    "postalCode": "88065-000",
+    "addressLocality": "Florianópolis",
+    "addressRegion": "SC",
+    "addressCountry": "BR"
+  },
+  "telephone": "+5548984460034",
+  "openingHours": ["Mo 09:00-18:00", "We-Fr 09:00-18:00"],
+  "priceRange": "$$"
+}
+</script>
+
+<script>
+/* ============ CONFIG · único lugar com dados de contato ============ */
+const SITE = {
+  whatsapp: "5548984460034",             // [CONFIRMAR] mesmo número do WhatsApp Business da bio
+  instagram: "https://www.instagram.com/dra.samantamagalhaes/",
+};
+
+/* Monta todos os links de WhatsApp a partir do CONFIG */
+document.querySelectorAll("[data-wa]").forEach(a => {
+  const msg = encodeURIComponent(a.dataset.msg || "Olá, Dra. Samanta! Vim pelo site.");
+  a.href = `https://wa.me/${SITE.whatsapp}?text=${msg}`;
+  a.target = "_blank"; a.rel = "noopener";
+});
+document.querySelectorAll("[data-ig]").forEach(a => a.href = SITE.instagram);
+document.getElementById("ano").textContent = new Date().getFullYear();
+
+/* Crossfade dos vídeos de fundo do hero */
+(function(){
+  const v1 = document.getElementById("bgv1"), v2 = document.getElementById("bgv2");
+  if(!v1 || !v2) return;
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if(matchMedia("(max-width: 900px)").matches) return;
+  // Play insistente: tenta quando o video fica pronto, a cada gesto e ao voltar pra aba
+  const tryPlay = v => { if(v.classList.contains("on") && v.paused) v.play().catch(()=>{}); };
+  const kick = () => { tryPlay(v1); tryPlay(v2); };
+  [v1, v2].forEach(v => {
+    ["canplay","loadeddata"].forEach(e => v.addEventListener(e, () => tryPlay(v)));
+  });
+  ["touchstart","touchend","click","scroll"].forEach(e => document.addEventListener(e, kick, {passive:true}));
+  document.addEventListener("visibilitychange", () => { if(!document.hidden) kick(); });
+  kick();
+  v2.play().catch(()=>{});
+  setInterval(()=>{
+    v1.classList.toggle("on"); v2.classList.toggle("on");
+    (v1.classList.contains("on") ? v1 : v2).play().catch(()=>{});
+  }, 7000);
+})();
+</script>
+</body>
+</html>
