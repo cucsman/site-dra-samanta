@@ -99,8 +99,8 @@ Versão para a seção "Quem cuida de você" (adaptar): biomédica esteta (CRBM 
 ## 12. Fotos
 - **Retrato da Dra.:** 1 foto original (blazer branco, cinto dourado, ambiente creme com planta e luminária — já está no tom areia). Na pasta há 3 prints da mesma foto (baixa qualidade, um com texto sobreposto). → **Regenerar via skill `padronizar-fotos-cliente`** (Higgsfield, gpt_image_2_5, 4 variações: 2 retrato + 2 atendimento), aplicar nos DOIS slots: **hero** + **"Quem cuida de você"**. Aprovação do Rudimar antes de aplicar.
 - **✅ Retratos IA APROVADOS (Rudimar, 16/09/2026) — gpt_image_2_5, 4:5, 1792×2240, paleta areia:**
-  - **HERO** → `img/hero-dra-samanta.webp` — retrato fechado, braços cruzados (job 41cccd15)
-    https://d8j0ntlcm91z4.cloudfront.net/user_3DjvtZXi51SOI1tV5xfZ09d74Q3/hf_20260916_215221_41cccd15-fcd8-475f-a8b2-744fb41197e2.png
+  - **HERO** → `img/hero-dra-samanta.webp` — retrato fechado, braços cruzados com mão esquerda visível (job b22d846d — v2, 22/09; v1 41cccd15 descartada: mão escondida)
+    https://d8j0ntlcm91z4.cloudfront.net/user_3DjvtZXi51SOI1tV5xfZ09d74Q3/hf_20260916_222011_b22d846d-e992-4a4f-8859-52fa7d7f3254.png
   - **QUEM CUIDA DE VOCÊ** → `img/sobre-dra-samanta.webp` — atendimento, drenagem na maca (job d6eee468)
     https://d8j0ntlcm91z4.cloudfront.net/user_3DjvtZXi51SOI1tV5xfZ09d74Q3/hf_20260916_215221_d6eee468-8dc8-438a-86b6-654270c7270b.png
   - Reservas (não usadas): retrato em pé no balcão (job ad608d56) e recepção na mesa (job e114fe36).

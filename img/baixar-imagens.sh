@@ -5,7 +5,7 @@
 cd "$(dirname "$0")"
 B="https://d8j0ntlcm91z4.cloudfront.net/user_3DjvtZXi51SOI1tV5xfZ09d74Q3"
 # retratos IA aprovados da Dra. Samanta (16/09/2026)
-curl -sf -o hero-dra-samanta.webp  "$B/hf_20260916_215221_41cccd15-fcd8-475f-a8b2-744fb41197e2_min.webp"
+curl -sf -o hero-dra-samanta.webp  "$B/hf_20260916_222011_b22d846d-e992-4a4f-8859-52fa7d7f3254_min.webp"
 curl -sf -o sobre-dra-samanta.webp "$B/hf_20260916_215221_d6eee468-8dc8-438a-86b6-654270c7270b_min.webp"
 # set paleta areia do template (placeholders até a cliente mandar fotos reais)
 curl -sf -o espaco-areia.webp "$B/hf_20260914_175552_5edaa3bb-3656-4021-bcfb-4d77f54b9fe4_min.webp"
